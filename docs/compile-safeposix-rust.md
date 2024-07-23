@@ -5,6 +5,7 @@
 We need to set environment with the following codes
 
 ```
+cd /home
 apt update
 apt install git
 apt install curl
@@ -19,7 +20,6 @@ rustup default nightly
 
 Then we clone it to home directory
 ```
-cd home
 git clone https://github.com/yzhang71/safeposix-rust.git
 ```
 

@@ -8,6 +8,7 @@ Just be aware Wasmtime is in the lind-wasm directory.
 ### Git Submodules
 The Wasmtime repository contains a number of git submodules. To build Wasmtime and most other crates in the repository, ensure that these are initialized with the following command:
 ```sh
+cd /home/lind-wasm/wasmtime
 git submodule update --init
 ```
 ### Switch branch
@@ -24,7 +25,12 @@ You should have these tools, if not install the Rust toolchain, which includes `
 The `wasmtime-fuzzing` crate transitively depends on `bindgen`, which requires `libclang` to be installed on your system. If you want to work on Wasmtime's fuzzing infrastructure, you'll need `libclang`. Details on how to get `libclang` and make it available for `bindgen` are [here](https://rust-lang.github.io/rust-bindgen/requirements.html).
 
 ## Building the Wasmtime CLI
-Change the path in lind-wasm/wasmtime/crates/rustposix/src/build.rs "cargo:rustc-link-search=native=" to the location of "librustposix.so"
+Change the path in `lind-wasm/wasmtime/crates/rustposix/src/build.rs` "cargo:rustc-link-search=native=" to the location of "librustposix.so"
+
+```
+cd /home/lind-wasm/wasmtime/crates/rustposix/src
+cd /home/lind-wasm/wasmtime
+```
 
 Remember to export
 
@@ -35,7 +41,7 @@ export LD_LIBRARY_PATH=/home/lind-wasm/wasmtime/crates/rustposix:$LD_LIBRARY_PAT
 You should find librustposix.so in rustposix(...wasmtime/crates/rustposix), but instead we should replace librustposix.so with another librustposix.so located in the safeposix-rust you complied before. Use the code below, you can change `librustposix.so` with the name of the file you want to replace and change `/home/lind-wasm/wasmtime/crates/rustposix` with the path of the new file(for file use cp for directory use cp -r )
 
 ```
-cp librustposix.so /home/lind-wasm/wasmtime/crates/rustposix
+cp /home/safeposix-rust/target/debug/librustposix.so /home/lind-wasm/wasmtime/crates/rustposix
 ```
 
 To make an unoptimized, debug build of the Wasmtime CLI tool, go to the root of the repository and run:

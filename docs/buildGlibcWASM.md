@@ -23,6 +23,14 @@ we should install some apt essential
 
 ```
 apt install build-essential
+apt install git
+apt install wget
+apt install gcc-i686-linux-gnu g++-i686-linux-gnu
+apt install nano
+apt install bison
+apt install gawk
+apt install vim
+apt install python3 (2.America 105.New York)
 ```
 
 We need glibc from lind-wasm, if you did it already then ignore it
@@ -62,9 +70,18 @@ Unzip clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04.tar.xz
 tar -xf clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04.tar.xz
 ```
 
+Switch branch of glibc(cd to lind-wasm/glibc). Find out which branch you are on currently and switch to branch "main" 
+
+```
+cd /home/lind-wasm/glibc
+git branch -a
+git switch main 
+```
+
 We move `libclang_rt.builtins-wasm32.a` from `/home/lind-wasm/glibc/wasi` to `/home/clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04/lib/clang/16/lib/` using
 
 ```
+cd /home
 mv /home/lind-wasm/glibc/wasi /home/clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04/lib/clang/16/lib
 ```
 
@@ -85,23 +102,11 @@ cmake --build build/sysroot --target install
 ```
 
 ## Configure
-Switch branch of glibc(cd to lind-wasm/glibc). Find out which branch you are on currently and switch to branch "main" 
+We create a .sh file and write a config script in the file. We use `nano` to create file in the glibc root directory(glibc is in the lind-wasm directory) and you can change `anyname` into the filename you want
 
 ```
-git branch -a
-git switch main 
-```
-
-Then, we create a .sh file and write a config script in the file. We use `nano` to create file in the glibc root directory(glibc is in the lind-wasm directory) and you can change `anyname` into the filename you want
-
-```
+cd /home/lind-wasm/glibc
 nano anyname.sh
-```
-
-before writing the script we need to install gcc-i686
-
-```
-apt install gcc-i686-linux-gnu g++-i686-linux-gnu
 ```
 
 then we write the script like this
@@ -154,6 +159,7 @@ Makefile  bits  config.h  config.log  config.make  config.status
 Before we start compiling to object files we need to install the glibc we complied to the prefix in the .sh file. For example, mine will install into `target`. This is the install command line we need to use
 
 ```
+cd build
 make install --keep-going
 ```
 
@@ -162,6 +168,11 @@ make install --keep-going
 In the build directory, usually we use `make --keep-going -j$(nproc)`. The first flag is to continue compiling after errors, we need this cuz there are too many errors now (mainly due to assembly about threading). The `-j` is important to speed it up, but also makes the compilation log interleaved. The compilation log is **VERY IMPORTANT**, which tells why a given c file failed to be compiled. So sometimes we don't want the `-j`. Also, we can copy the actual compiler command in the compile log. For such commands, if we want to compile a single C file, only the source file path need to be further specified. We can use this to test compiling a specific file.
 
 ## Generating WASM sysroot
+Back to glibc
+
+```
+cd ..
+```
 
 This is an example for `gen_sysroot.sh`
 
@@ -229,6 +240,7 @@ Note that the header files should be pre-generated using `make install`. The crt
 
 After modifying all the path talked on the above, try to run `gen_sysroot.sh` and see if it works
 ```
+chmod +x gen_sysroot.sh
 ./gen_sysroot.sh
 ```
 
