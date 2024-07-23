@@ -3,6 +3,7 @@
 ## Mon 7/22/2024
 1. Fix errors by initializing two values, borrowed from wasi-libc: `__default_pthread_attr.internal.stacksize = 131072;` and `__default_pthread_attr.internal.guardsize = 0;` in function __libc_setup_tls in /glibc/csu/libc-tls.c 
 2. In order to create a thread stack, glibc will use mmap to allocate the memory, and mmap is not fully support by our version of glibc, so working on that now
+3. So, I enabled the debug info in wasi-libc and traced the implementation of mmap. It turns out that mmap in wasi-libc is emulated by malloc. After discussing this with Nick and Coulson, we concluded that this approach is not acceptable, so we will implement our own mmap.
 
 ## Fri 7/19/2024
 1. I am now integrating the WASI-libc threading implementation into glibc and have migrated __init_tls.c into the csu directory and updated the Makefile accordingly. After fixing many define and initialization issues, we are now facing these errors:
