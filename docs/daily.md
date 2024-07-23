@@ -1,5 +1,9 @@
 # Daily Progress Log
 
+## Mon 7/23/2024
+1. Met with Runbin and Qianxi to set up the environment for building glibc. The Zoom meeting was recorded and can be accessed: https://nyu.zoom.us/rec/share/KUC5xHATYHEOQ2N9OUPp9_9HI-5ITyid7ACUmOViLIwAUV5MNTKfqDBLzfpV4RAV.cv_rUMdPO9ahNitB?startTime=1721757718000.
+2. Inspired by WASI-libc, we temporarily used `malloc` instead of `mmap`, which fixed the segmentation error. The allocated size is extracted from WASI-libc.
+
 ## Mon 7/22/2024
 1. Fix errors by initializing two values, borrowed from wasi-libc: `__default_pthread_attr.internal.stacksize = 131072;` and `__default_pthread_attr.internal.guardsize = 0;` in function __libc_setup_tls in /glibc/csu/libc-tls.c 
 2. In order to create a thread stack, glibc will use mmap to allocate the memory, and mmap is not fully support by our version of glibc, so working on that now
