@@ -20,7 +20,7 @@ rustup default nightly
 
 Then we clone it to home directory
 ```
-git clone https://github.com/yzhang71/safeposix-rust.git
+git clone --recurse-submodules https://github.com/yzhang71/safeposix-rust.git
 ```
 
 Switch branch to 3i-dev

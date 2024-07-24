@@ -25,10 +25,17 @@ You should have these tools, if not install the Rust toolchain, which includes `
 The `wasmtime-fuzzing` crate transitively depends on `bindgen`, which requires `libclang` to be installed on your system. If you want to work on Wasmtime's fuzzing infrastructure, you'll need `libclang`. Details on how to get `libclang` and make it available for `bindgen` are [here](https://rust-lang.github.io/rust-bindgen/requirements.html).
 
 ## Building the Wasmtime CLI
-Change the path in `lind-wasm/wasmtime/crates/rustposix/src/build.rs` "cargo:rustc-link-search=native=" to the location of "librustposix.so"
-
 ```
 cd /home/lind-wasm/wasmtime/crates/rustposix/src
+```
+
+Cd to path `/home/lind-wasm/wasmtime/crates/rustposix/src` and vim file `build.rs` change the first line into `cargo:rustc-link-search=native=/home/lind-wasm/wasmtime/crates/rustposix`
+
+```
+vim build.rs
+```
+
+```
 cd /home/lind-wasm/wasmtime
 ```
 

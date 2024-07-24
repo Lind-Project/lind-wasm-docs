@@ -30,6 +30,7 @@ apt install nano
 apt install bison
 apt install gawk
 apt install vim
+apt install libxml2
 apt install python3 (2.America 105.New York)
 ```
 
@@ -155,17 +156,20 @@ After config succeed, you will see these in the `build` directory,
 Makefile  bits  config.h  config.log  config.make  config.status
 ```
 
-## Installing glibc
-Before we start compiling to object files we need to install the glibc we complied to the prefix in the .sh file. For example, mine will install into `target`. This is the install command line we need to use
+## Compiling to object files
+In the build directory, usually we use `make --keep-going -j4`. The first flag is to continue compiling after errors, we need this cuz there are too many errors now (mainly due to assembly about threading). The `-j` is important to speed it up, but also makes the compilation log interleaved. The compilation log is **VERY IMPORTANT**, which tells why a given c file failed to be compiled. So sometimes we don't want the `-j`. Also, we can copy the actual compiler command in the compile log. For such commands, if we want to compile a single C file, only the source file path need to be further specified. We can use this to test compiling a specific file.
 
 ```
 cd build
-make install --keep-going
+make --keep-going -j4
 ```
 
-## Compiling to object files
+## Installing glibc
+We need to install the glibc we complied to the prefix in the .sh file. For example, mine will install into `target`. This is the install command line we need to use
 
-In the build directory, usually we use `make --keep-going -j$(nproc)`. The first flag is to continue compiling after errors, we need this cuz there are too many errors now (mainly due to assembly about threading). The `-j` is important to speed it up, but also makes the compilation log interleaved. The compilation log is **VERY IMPORTANT**, which tells why a given c file failed to be compiled. So sometimes we don't want the `-j`. Also, we can copy the actual compiler command in the compile log. For such commands, if we want to compile a single C file, only the source file path need to be further specified. We can use this to test compiling a specific file.
+```
+make install --keep-going
+```
 
 ## Generating WASM sysroot
 Back to glibc
