@@ -1,5 +1,8 @@
 # Daily Progress Log
 
+## Mon 7/25/2024
+1. Instead of calling `__clone_internal`, we are now porting `__wasi_thread_spawn` from WASI-libc.
+
 ## Mon 7/23/2024
 1. Met with Runbin and Qianxi to set up the environment for building glibc. The Zoom meeting was recorded and can be accessed: https://nyu.zoom.us/rec/share/KUC5xHATYHEOQ2N9OUPp9_9HI-5ITyid7ACUmOViLIwAUV5MNTKfqDBLzfpV4RAV.cv_rUMdPO9ahNitB?startTime=1721757718000.
 2. Inspired by WASI-libc, we temporarily used `malloc` instead of `mmap`, which fixed the segmentation error. The allocated size is extracted from WASI-libc.
