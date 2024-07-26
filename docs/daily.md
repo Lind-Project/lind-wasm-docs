@@ -16,6 +16,8 @@ This issue was due to the threading configuration not being enabled at runtime. 
 Error: unknown import: `wasi_snapshot_preview1::lind_syscall` has not been defined
 ```
 After examining the source code of Wasmtime, we discovered that since threading support is experimental, the developers have separated `thread` and `preview` into two independent modules. Therefore, we need to enable both `--wasi threads=y` and `--wasi preview2=y` at runtime.
+
+
 2. After fixing the above issue, we are now encountering the following error:
 ```
 2024-07-26T16:52:15.657304Z ERROR wasmtime_wasi_threads: failed to find a wasi-threads entry point function; expected an export with name: wasi_thread_start
