@@ -1,7 +1,32 @@
 # Daily Progress Log
 
+## Mon 7/26/2024
+1. After migrating the WASI-libc threading code, we encountered the following error:
+
+```
+Error: failed to run main module `thread.wasm`
+
+Caused by:
+    0: failed to instantiate "thread.wasm"
+    1: unknown import: `wasi::thread-spawn` has not been defined
+```
+This issue was due to the threading configuration not being enabled at runtime. By adding the `--wasi threads=y` flag, we then encountered another error:
+
+```
+Error: unknown import: `wasi_snapshot_preview1::lind_syscall` has not been defined
+```
+After examining the source code of Wasmtime, we discovered that since threading support is experimental, the developers have separated `thread` and `preview` into two independent modules. Therefore, we need to enable both `--wasi threads=y` and `--wasi preview2=y` at runtime.
+2. After fixing the above issue, we are now encountering the following error:
+```
+2024-07-26T16:52:15.657304Z ERROR wasmtime_wasi_threads: failed to find a wasi-threads entry point function; expected an export with name: wasi_thread_start
+                                                                                                                                                            
+thread 'main' panicked at /home/dennis/Documents/lind-wasm/wasmtime/crates/wasi-threads/src/lib.rs:138:21:                                                  
+thread_id = -1 
+```
+
 ## Mon 7/25/2024
 1. Instead of calling `__clone_internal`, we are now porting `__wasi_thread_spawn` from WASI-libc.
+2. Implemented the __wasi_thread_spawn part in glibc.
 
 ## Mon 7/23/2024
 1. Met with Runbin and Qianxi to set up the environment for building glibc. The Zoom meeting was recorded and can be accessed: https://nyu.zoom.us/rec/share/KUC5xHATYHEOQ2N9OUPp9_9HI-5ITyid7ACUmOViLIwAUV5MNTKfqDBLzfpV4RAV.cv_rUMdPO9ahNitB?startTime=1721757718000.
