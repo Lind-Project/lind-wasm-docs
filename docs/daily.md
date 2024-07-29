@@ -1,5 +1,9 @@
 # Daily Progress Log
 
+## Mon 7/29/2024
+1. We now have a clear pipeline for how WASI-libc handles the threading part. The function `wasi_thread_start` is implemented in assembly format for WebAssembly, and it calls the function `__wasi_thread_start_C`, which is a C function.
+2. We are currently working to integrate the `.s` file with our glibc, and then redirect the function call from WebAssembly to C.
+
 ## Mon 7/26/2024
 1. After migrating the WASI-libc threading code, we encountered the following error:
 
