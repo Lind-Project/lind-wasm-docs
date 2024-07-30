@@ -7,6 +7,8 @@ Invalid input WebAssembly code at offset 230547: global is immutable: cannot mod
 ```
 It seems to be due to the `global.set __stack_pointer` and `global.set __tls_base` instructions in the assembly file.
 
+2. Set up the lind-wasm environment for Qianxi on our server.
+
 ## Mon 7/29/2024
 1. We now have a clear pipeline for how WASI-libc handles the threading part. The function `wasi_thread_start` is implemented in assembly format for WebAssembly, and it calls the function `__wasi_thread_start_C`, which is a C function.
 2. We are currently working to integrate the `.s` file with our glibc, and then redirect the function call from WebAssembly to C.
