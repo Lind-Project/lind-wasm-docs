@@ -1,5 +1,14 @@
 # Daily Progress Log
 
+## Wed 7/31/2024
+1. For now, I have disabled the global.set instructions so that we can continue working on the rest of the code. However, we are now encountering the following problem:
+```
+thread 'wasi-thread-1' panicked at src/commands/run.rs:805:14:
+wasmtime_wasi is not compatible with threads
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+wasi-thread-1 panicked: Any { .. }
+```
+
 ## Tue 7/30/2024
 1. I have now integrated the WebAssembly format assembly code `wasi_thread_start.s` into glibc, compiled it into an object file (.o), and linked it into the sysroot. However, at runtime, we encounter the following error: 
 ```
