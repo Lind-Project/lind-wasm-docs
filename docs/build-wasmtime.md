@@ -64,3 +64,36 @@ cargo build --release
 The built executable will be located at `target/release/wasmtime`.
 
 You can also build and run a local Wasmtime CLI by replacing `cargo build` with `cargo run`.
+
+
+Additional Instructions:
+
+First you need to download lind-wasm in your docker to home directory
+
+```
+sudo git clone https://github.com/Lind-Project/lind-wasm.git
+```
+
+I assume you have rust else use
+
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs/ | sh
+rustup install nightly
+. "$HOME/.cargo/env"
+rustup default nightly
+```
+
+set Clang path
+```
+wget https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.4/clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04.tar.xz
+tar -xf clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04.tar.xz
+export CLANG=clang_folder
+```
+
+```
+cd lind-wasm
+mv ./src/glibc/wasi $CLANG/lib/clang/16/lib
+./lindtool.sh make_all
+./lindtool.sh compile_wasmtime
+```
+

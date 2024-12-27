@@ -1,5 +1,51 @@
+
+## Compiling a WebAssembly Module with Clang
+
+Let's start with a simple example, `malloc-test.c`, which demonstrates dynamic memory allocation using `malloc` in C. We will compile this C program to a WebAssembly module using Clang with the WASI target.
+
+### Example C Program: `malloc-test.c`
+
+```c
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+    const char *str = "Hello from Dennis's WASM!\n";
+
+    size_t str_len = strlen(str) + 1;
+
+    char *buf = malloc(str_len);
+
+    if (buf == NULL) {
+        return -1;
+    }
+
+    strcpy(buf, str);
+
+    write(1, buf, str_len - 1);
+
+    free(buf);
+
+    return 0;
+}
+```
+
+### Compiling the Program
+
+Use the following command to compile the `malloc-test.c` program to WebAssembly:
+
+```sh
+../../clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04/bin/clang-16 --target=wasm32-unknown-wasi --sysroot /home/dennis/Documents/Just-One-Turtle/wasi-libc/sysroot malloc-test.c -g -O0 -o malloc-test.wasm
+```
+
+- `--target=wasm32-unknown-wasi`: Specifies the target to be WebAssembly with WASI.
+- `--sysroot /home/dennis/Documents/Just-One-Turtle/wasi-libc/sysroot`: Points to the WASI sysroot directory.
+- `-g`: Includes debugging information.
+- `-O0`: Disables optimizations for easier debugging.
+
 ## Frequently Used Flags
-- `--target=wasm32-unkown-wasi` for compiling to wasm
+- `--target=wasm32-unknown-wasi` for compiling to wasm
 - `-c` for compiling as a library without main executable
 - `-pthread` then the compiler to understand `__tls_base` etc
 - `--sysroot` specifying the stand library path
@@ -52,11 +98,3 @@ If you need to use glibc(such as printf, printf.c is located in lind-wasm/lind-w
 
 You should get printf.wasm after compiling printf.c
 
-## Run wasmtime
-Run the `.wasm` file, modify the wasmtime path to your own
-
-```
-/home/lind-wasm/wasmtime/target/debug/wasmtime add.wasm
-```
-
-For printf.wasm, you should get `Hello World!`.

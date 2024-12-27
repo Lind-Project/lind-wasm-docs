@@ -1,20 +1,43 @@
 site_name: Lind-Wasm Docs
-site_url: https://yizhuoliang.github.io/lind-wasm-docs/
+site_url: https://lind-project.github.io/lind-wasm-docs/
 theme:
   material
 
 nav:
   - Home: index.md
-  - Progress: daily.md
-  - WASM Knowledge:
-    - understandTls.md
-  - Building WASM glibc: buildGlibcWASM.md
-  - Compile safeposix-rust: compile-safeposix-rust.md
-  - Compiling Wasmtime from Source: compile-wasmtime.md
-  - Compiling C to WASM: wasmCompile.md
-  - Debugging WASM module with Wasmtime: wasmtime-debug.md
-  - How to add docs: writeDoc.md
-  - Team: team.md
+  - Using Lind-Wasm:
+    - Compiling programs: compile-programs.md
+    - Running programs: run-programs.md
+    - Debugging programs: debug-programs.md
+  - Internal Documentation:
+    - libc: libc.md
+    - Wasmtime: wasmtime.md
+    - RawPOSIX: rawposix.md
+    - Multi-Processing: multiprocess-support.md
+  - Build System:
+    - Building libc: build-libc.md
+    - Building wasmtime: build-wasmtime.md
+    - Building RawPOSIX: build-rawposix.md
+    - Bazel: bazel.md
+  - Testing:
+    - Unit tests: unit-tests.md
+  - More:
+    - Our Team: team.md
+    - Adding to the docs: writeDoc.md
+  
+
+
+
+  # - Progress: daily.md
+  # - WASM Knowledge:
+  #   - understandTls.md
+  # - Building WASM glibc: buildGlibcWASM.md
+  # - Compile safeposix-rust: compile-safeposix-rust.md
+  # - Compiling Wasmtime from Source: compile-wasmtime.md
+  # - Compiling C to WASM: wasmCompile.md
+  # - Debugging WASM module with Wasmtime: wasmtime-debug.md
+  # - How to add docs: writeDoc.md
+  # - Team: team.md
 
 extra_css:
   - stylesheets/img.css
