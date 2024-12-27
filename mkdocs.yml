@@ -6,24 +6,24 @@ theme:
 nav:
   - Home: index.md
   - Using Lind-Wasm:
-    - Compiling programs: compile-programs.md
-    - Running programs: run-programs.md
-    - Debugging programs: debug-programs.md
+    - Compiling programs: use/compile-programs.md
+    - Running programs: use/run-programs.md
+    - Debugging programs: use/debug-programs.md
   - Internal Documentation:
-    - libc: libc.md
-    - Wasmtime: wasmtime.md
-    - RawPOSIX: rawposix.md
-    - Multi-Processing: multiprocess-support.md
+    - libc: internal/libc.md
+    - Wasmtime: internal/wasmtime.md
+    - RawPOSIX: internal/rawposix.md
+    - Multi-Processing: internal/multiprocess-support.md
   - Build System:
-    - Building libc: build-libc.md
-    - Building wasmtime: build-wasmtime.md
-    - Building RawPOSIX: build-rawposix.md
-    - Bazel: bazel.md
+    - Building libc: build/build-libc.md
+    - Building wasmtime: build/build-wasmtime.md
+    - Building RawPOSIX: build/build-rawposix.md
+    - Bazel: build/bazel.md
   - Testing:
-    - Unit tests: unit-tests.md
+    - Unit tests: testing/unit-tests.md
   - More:
-    - Our Team: team.md
-    - Adding to the docs: writeDoc.md
+    - Our Team: more/team.md
+    - Adding to the docs: more/writeDoc.md
   
 
 
