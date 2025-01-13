@@ -18,16 +18,16 @@ rustup default nightly
 
 ## Clone git repo
 
-Then we clone it to home directory
-```
-git clone --recurse-submodules https://github.com/yzhang71/safeposix-rust.git
+First we need to clone the mono-repo:
+
+```sh
+git clone https://github.com/Lind-Project/lind-wasm.git
 ```
 
-Switch branch to 3i-dev
+Then, go the `RawPOSIX` directory:
 
-```
-cd safeposix-rust
-git switch 3i-dev
+```sh
+cd lind-wasm/src/RawPOSIX
 ```
 
 ## Build
