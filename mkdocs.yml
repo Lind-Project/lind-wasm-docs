@@ -19,6 +19,10 @@ nav:
     - Building wasmtime: build/build-wasmtime.md
     - Building RawPOSIX: build/build-rawposix.md
     - Bazel: build/bazel.md
+  - Usage:
+    - Compile Programs: use/compile-programs.md
+    - Debug Programs: use/debug-programs.md
+    - Run Programs: use/run-programs.md
   - Testing:
     - Unit tests: testing/unit-tests.md
   - More:
