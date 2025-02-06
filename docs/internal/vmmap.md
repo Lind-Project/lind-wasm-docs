@@ -41,6 +41,7 @@ mmap provides a mechanism for mapping memory regions with specific properties, s
 To ensure that memory mappings remain manageable, mmap works with vmmap to search for available memory regions. When vmmap searches for a free range, it always starts from the bottom of the address space and grows upwards. This minimizes fragmentation and avoids conflicts with the heap, which is placed at the top of memory and grows downwards.
 
 **How It Works**
+
 1. Memory Region Identification:
     - If MAP_FIXED is not set, vmmap searches for a suitable free memory region.
     - If MAP_FIXED is specified, the requested address is used directly.
@@ -58,6 +59,7 @@ To ensure that memory mappings remain manageable, mmap works with vmmap to searc
 munmap is used to release memory mappings previously allocated via mmap. Unlike traditional implementations that return memory to the OS, Lind’s munmap only marks the region as inaccessible by setting it to PROT_NONE, while retaining it within the process's address space.
 
 **How It Works**
+
 1. Address Validation:
     - The target address must be aligned to page boundaries.
     - The region must exist within vmmap and must not contain protected memory.
@@ -73,6 +75,7 @@ In Lind, the heap is always placed at the top of the memory space, right after t
 
 
 **How It Works**
+
 1. Tracking the Program Break:
     - The program break corresponds to the end of the heap region in vmmap.
     - sbrk(0) returns the current break, while sbrk(N) attempts to increase the heap by N bytes.
