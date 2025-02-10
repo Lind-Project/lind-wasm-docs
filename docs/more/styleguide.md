@@ -23,11 +23,39 @@ This style guide establishes conventions for writing Rust code that is clear, ma
 
 ### 2.3 Comments
 - **File Headers:** Begin each file with a brief comment summarizing its purpose.
+  List the following:
+  - Purpose: A brief description of what the function does.
+  - Input: A list of parameters with their types and meanings.
+  - Output: The return value and its purpose.
+  - Exceptions: Any potential errors, edge cases, or unexpected behaviors.
+  - Notes: Additional details, optimizations, or usage tips.
+
+
 - **Module and Function Documentation:**
   - Use `///` for public items.
   - Use `//!` for module-level documentation.
 - **Inline Comments:** Use `//` sparingly for explanations within code blocks.
-
+Example:
+```rust
+/// PURPOSE:  
+/// Computes the area of a rectangle.  
+///  
+/// INPUT:  
+/// - `width`: The rectangle’s width (f64).  
+/// - `height`: The rectangle’s height (f64).  
+///  
+/// OUTPUT:  
+/// - Returns the computed area as `f64`.  
+///  
+/// EXCEPTIONS:  
+/// - Negative values may produce incorrect results.  
+///  
+/// NOTES:  
+/// - Assumes width and height are in the same unit.  
+fn calculate_area(width: f64, height: f64) -> f64 {  
+    width * height  
+}
+```
 ---
 
 ## 3. Naming Conventions
