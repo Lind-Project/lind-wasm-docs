@@ -3,7 +3,6 @@
 ## What is a Vmmap?
 
 A vmmap is a tool for managing a process’s memory layout within an operating system. It provides detailed insights into allocated memory regions, including the heap, stack, and memory-mapped files. Additionally, it displays access permissions (read-only, read-write, executable), memory region boundaries, sizes, and any mapped files.
-Motivation
 
 ## Motivation
 
@@ -21,6 +20,11 @@ The fork() system call requires duplicating the parent process’s memory space 
 #### brk()
 
 The brk() system call expands the heap linearly, ensuring contiguous allocation as expected by libc and other libraries. Many functions, including malloc(), rely on this guarantee. Without a vmmap, memory allocation would follow a greedy approach, potentially interleaving heap regions with other mappings, breaking POSIX compliance, and causing library failures.
+
+
+### mmap()/munmap()/mprotect()
+
+It's necessary to manage memory allocated or modified using these calls to support the proper functiong of fork() and brk() as mentioned above.
 
 ### Additional Benefits:
 
