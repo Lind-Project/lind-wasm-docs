@@ -24,38 +24,63 @@ This style guide establishes conventions for writing Rust code that is clear, ma
 ### 2.3 Comments
 - **File Headers:** Begin each file with a brief comment summarizing its purpose.
   List the following:
-  - Purpose: A brief description of what the function does.
-  - Input: A list of parameters with their types and meanings.
-  - Output: The return value and its purpose.
-  - Exceptions: Any potential errors, edge cases, or unexpected behaviors.
-  - Notes: Additional details, optimizations, or usage tips.
+  - `# Arguments` – Lists function parameters and their descriptions.  
+  - `# Returns` – Describes the return value and its type.  
+  - `# Panics` – Explains when and why the function may panic.  
+  - `# Examples` – Provides usage examples in Rust code blocks.  
+  - `# Safety` – Used for `unsafe` functions, outlining preconditions.  
 
+Example:
+```rust
+/// Computes the area of a rectangle.
+///
+/// # Arguments
+///
+/// * `width` - The width of the rectangle.
+/// * `height` - The height of the rectangle.
+///
+/// # Returns
+///
+/// The computed area as `f64`.
+///
+/// # Panics
+///
+/// This function does not explicitly handle negative values.
+///
+/// # Examples
+///
+/// ```
+/// let area = my_crate::calculate_area(2.0, 3.0);
+/// assert_eq!(area, 6.0);
+/// ```
+fn calculate_area(width: f64, height: f64) -> f64 {
+    width * height
+}
+
+```
 
 - **Module and Function Documentation:**
   - Use `///` for public items.
   - Use `//!` for module-level documentation.
-- **Inline Comments:** Use `//` sparingly for explanations within code blocks.
-Example:
+  
+  Example:
 ```rust
-/// PURPOSE:  
-/// Computes the area of a rectangle.  
-///  
-/// INPUT:  
-/// - `width`: The rectangle’s width (f64).  
-/// - `height`: The rectangle’s height (f64).  
-///  
-/// OUTPUT:  
-/// - Returns the computed area as `f64`.  
-///  
-/// EXCEPTIONS:  
-/// - Negative values may produce incorrect results.  
-///  
-/// NOTES:  
-/// - Assumes width and height are in the same unit.  
-fn calculate_area(width: f64, height: f64) -> f64 {  
-    width * height  
-}
+//! # Geometry Module
+//!
+//! This module provides functions for calculating areas of geometric shapes.
+//!
+//! # Examples
+//!
+//! ```
+//! use crate::geometry::calculate_area;
+//!
+//! let area = calculate_area(5.0, 4.0);
+//! assert_eq!(area, 20.0);
+//! ```
 ```
+
+- **Inline Comments:** Use `//` sparingly for explanations within code blocks.
+
 ---
 
 ## 3. Naming Conventions
@@ -144,17 +169,21 @@ struct Point {
 ### 6.1 Unit Tests
 - Write unit tests for all public functions.
 - Place tests in a `mod tests` block within the same file.
+- Whenever possible, include doctests as mentioned in the [rust style guide](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)
 
 ```rust
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_calculate_area() {
-        assert_eq!(calculate_area(2.0, 3.0), 6.0);
-    }
+/// Computes the area of a rectangle.
+///
+/// # Examples
+///
+/// ```
+/// let area = my_crate::calculate_area(2.0, 3.0);
+/// assert_eq!(area, 6.0);
+/// ```  
+fn calculate_area(width: f64, height: f64) -> f64 {
+    width * height
 }
+
 ```
 
 ### 6.2 Integration Tests
@@ -167,17 +196,31 @@ mod tests {
 ---
 
 ## 7. Unsafe Code
-
+- As mentioned in commenting style above, ensure unsafe functions are documented with a `# Safety` block
 - Use `unsafe` sparingly and only when absolutely necessary.
 - Encapsulate unsafe code in functions with clear and well-documented safety contracts.
 
 ```rust
-/// Safety
+/// Dereferences a raw pointer.
 ///
-/// Caller must ensure that `ptr` is valid and properly aligned.
+/// # Safety
+///
+/// - The caller must ensure that `ptr` is non-null and properly aligned.
+/// - Accessing the pointer must not cause a data race.
+///
+/// # Examples
+///
+/// ```
+/// let x = 42;
+/// let ptr = &x as *const i32;
+/// unsafe {
+///     assert_eq!(deref_raw_pointer(ptr), 42);
+/// }
+/// ```
 unsafe fn deref_raw_pointer(ptr: *const i32) -> i32 {
     *ptr
 }
+
 ```
 
 ---
@@ -191,12 +234,12 @@ unsafe fn deref_raw_pointer(ptr: *const i32) -> i32 {
 ```rust
 /// Calculates the area of a rectangle.
 ///
-/// Arguments:
+/// # Arguments:
 ///
 /// * `width` - The width of the rectangle.
 /// * `height` - The height of the rectangle.
 ///
-/// Examples:
+/// # Examples:
 ///
 /// ```
 /// let area = calculate_area(2.0, 3.0);
