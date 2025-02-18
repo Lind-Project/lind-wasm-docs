@@ -8,28 +8,9 @@ A vmmap is a tool for managing a process’s memory layout within an operating s
 
 Wasmtime traditionally manages memory using WebAssembly’s linear memory model, where each instance gets a contiguous memory block divided into 64 KiB pages. This memory can grow or shrink dynamically within defined constraints. Since Lind emulates processes as cages within a single address space, tracking allocated memory regions per cage is essential.
 
-To address this, we integrated a vmmap system into Lind that more closely resembles POSIX-based memory management. This allows proper implementation of syscalls like brk(), mmap(), and mprotect() for memory allocation, deallocation, and permission management. It also ensures accurate memory region copying when forking cages.
+Attempts to provide POSIX-like interfaces for WASM, such as wasi-libc and emscripten, rely on WASM's memory.grow feature to expand available memory. Both implement custom malloc() functions that use memory.grow to extend the heap while preventing system mmap operations. Alternatively, they simulate file-backed mmap by invoking memory.grow and manually copying file contents into the allocated region.
 
-### Necessary For:
-
-
-#### fork()
-
-The fork() system call requires duplicating the parent process’s memory space for the child. Properly replicating memory requires tracking protections and distinguishing shared memory regions. Some regions may have different permissions based on their initial mappings or modifications via mprotect(), preventing a simple bulk copy. Additionally, shared regions must be handled separately to maintain correct page sharing between cages. Without vmmap, accurate memory duplication in the child process wouldn’t be guaranteed. Instead by tracking which regions are shared, we can use [mremap](https://man7.org/linux/man-pages/man2/mremap.2.html) to create a shareable mapping between cages.
-
-#### brk()
-
-The brk() system call expands the heap linearly, ensuring contiguous allocation as expected by libc and other libraries. Many functions, including malloc(), rely on this guarantee. Without a vmmap, memory allocation would follow a greedy approach, potentially interleaving heap regions with other mappings, breaking POSIX compliance, and causing library failures.
-
-
-### mmap()/munmap()/mprotect()
-
-It's necessary to manage memory allocated or modified using these calls to support the proper functiong of fork() and brk() as mentioned above.
-
-### Additional Benefits:
-
-- Reduced fragmentation: Without memory tracking, greedy allocation wastes space by failing to reuse deallocated pages. This is particularly crucial since cages are limited to 4GB of address space.
-- Improved memory safety: Heap overflows are less likely to impact valid mappings, as heaps and other memory regions remain isolated unless explicitly mapped with MAP_FIXED.
+To address this, we eschew memory.grow and integrat a vmmap system into Lind that more closely resembles POSIX-based memory management. This allows proper implementation of syscalls like brk(), mmap(), and mprotect() for memory allocation, deallocation, and permission management. It also ensures accurate memory region copying when forking cages.
 
 ## Vmmap Implementation Overview
 
@@ -90,3 +71,26 @@ In Lind, the heap is always placed at the top of the memory space, right after t
 3. Heap Shrinking:
     - If the program break is decreased, memory beyond the new limit is marked as inaccessible (PROT_NONE) instead of being deallocated immediately, similar to munmap.
     - The vmmap entry is updated accordingly.
+
+
+### Why the Vmmap is Necessary
+
+Without a vmmap, syscalls like mmap() and munmap() could still be implemented using a greedy approach with memory.grow, similar to how other systems simulate file-backed mmap, as described above. However, this method would be unsuitable for multi-processing and would violate POSIX compliance, as we explain in this section.
+
+#### fork()
+
+The fork() system call requires duplicating the parent process’s memory space for the child. Properly replicating memory requires tracking protections and distinguishing shared memory regions. Some regions may have different permissions based on their initial mappings or modifications via mprotect(), preventing a simple bulk copy. Additionally, shared regions must be handled separately to maintain correct page sharing between cages. Without vmmap, accurate memory duplication in the child process wouldn’t be guaranteed. Instead by tracking which regions are shared, we can use [mremap](https://man7.org/linux/man-pages/man2/mremap.2.html) to create a shareable mapping between cages.
+
+#### brk()
+
+The brk() system call expands the heap linearly, ensuring contiguous allocation as required by libc and other libraries. Many functions, including malloc(), depend on this guarantee. Without a vmmap, memory allocation could use the aforementioned greedy approach, but this might interleave heap regions with other mappings created by mmap(), violating POSIX compliance and leading to library failures.
+
+
+### mmap()/munmap()/mprotect()
+
+It's necessary to manage memory allocated or modified using these calls to support the proper functiong of fork() and brk() as mentioned above.
+
+### Additional Benefits:
+
+- Reduced fragmentation: Without memory tracking, greedy allocation wastes space by failing to reuse deallocated pages. This is particularly crucial since cages are limited to 4GB of address space.
+- Improved memory safety: Heap overflows are less likely to impact valid mappings, as heaps and other memory regions remain isolated unless explicitly mapped with MAP_FIXED.
