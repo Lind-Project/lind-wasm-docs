@@ -26,7 +26,7 @@ nav:
   - Testing:
     - Unit tests: testing/unit-tests.md
   - More:
-    - Our Team: more/team.md
+    - Maintainers: more/maintainers.md
     - Adding to the docs: more/writeDoc.md
     - Style Guide: more/styleguide.md
   
