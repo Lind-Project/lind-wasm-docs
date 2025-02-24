@@ -1,0 +1,1811 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lind-project.github.io/lind-wasm-docs/daily/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>Daily Progress Log - Lind-Wasm Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/img.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#daily-progress-log" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Lind-Wasm Docs" class="md-header__button md-logo" aria-label="Lind-Wasm Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lind-Wasm Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Daily Progress Log
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Lind-Wasm Docs" class="md-nav__button md-logo" aria-label="Lind-Wasm Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Lind-Wasm Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Using Lind-Wasm
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Using Lind-Wasm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use/compile-programs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compiling programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use/run-programs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use/debug-programs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debugging programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Internal Documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Internal Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../internal/libc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    libc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../internal/wasmtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wasmtime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../internal/rawposix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RawPOSIX
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../internal/multiprocess-support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multi-Processing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Build System
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Build System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build/build-libc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building libc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build/build-wasmtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building wasmtime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build/build-rawposix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building RawPOSIX
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build/bazel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bazel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Usage
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Usage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use/compile-programs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compiling programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use/debug-programs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debugging programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use/run-programs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Testing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Testing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing/unit-tests/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unit tests
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    More
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            More
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../more/maintainers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maintainers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../more/writeDoc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adding to the docs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../more/styleguide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Style Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#thu-8012024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thu 8/01/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tue-7302024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tue 7/30/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mon-7292024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mon 7/29/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mon-7262024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mon 7/26/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mon-7252024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mon 7/25/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mon-7232024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mon 7/23/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mon-7222024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mon 7/22/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fri-7192024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fri 7/19/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thu-7182024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thu 7/18/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wed-7172024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wed 7/17/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tue-7162024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tue 7/16/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mon-7152024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mon 7/15/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thu-7112024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thu 7/11/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wed-7102024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wed 7/10/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tue-7092024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tue 7/09/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mon-7082024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mon 7/08/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thu-7042024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thu 7/04/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wed-7032024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wed 7/03/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tue-7022024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tue 7/02/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mon-7012024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mon 7/01/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fri-6282024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fri 6/28/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thu-6272024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thu 6/27/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wed-6262024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wed 6/26/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tue-6252024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tue 6/25/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mon-6242024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mon 6/24/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wed-6192024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wed 6/19/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mon-tue-617-182024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mon-Tue 6/17-18/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fri-6142024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fri 6/14/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wed-6122024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wed 6/12/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tue-6112024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tue 6/11/2024
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tue 6/11/2024">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-this-doc-today" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting this Doc Today!
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mon-6102024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mon 6/10/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fri-sat-67-82024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fri-Sat 6/7-8/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thu-662024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thu 6/6/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wed-652024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wed 6/5/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sat-612024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sat, 6/1/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wed-5292024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wed, 5/29/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mon-tue-627-282024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mon-Tue, 6/27-28/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fri-5242024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fri, 5/24/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thu-5232024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thu, 5/23/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wed-5222024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wed, 5/22/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mon-5202024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mon, 5/20/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fri-sun-517-192024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fri-Sun, 5/17-19/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tue-5142024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tue, 5/14/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tue-4302024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tue, 4/30/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thu-4252024" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thu, 4/25/2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-wild-age" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Wild Age
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="daily-progress-log">Daily Progress Log</h1>
+<h2 id="thu-8012024">Thu 8/01/2024</h2>
+<ol>
+<li>Working with Qianxi to fix the compatibility issue.</li>
+<li>Encountering the issue of Rustposix not properly setting up the cage.</li>
+</ol>
+<h2 id="tue-7302024">Tue 7/30/2024</h2>
+<ol>
+<li>I have now integrated the WebAssembly format assembly code <code>wasi_thread_start.s</code> into glibc, compiled it into an object file (.o), and linked it into the sysroot. However, at runtime, we encounter the following error: </li>
+</ol>
+<pre><code>Invalid input WebAssembly code at offset 230547: global is immutable: cannot modify it with global.set
+</code></pre>
+<p>It seems to be due to the <code>global.set __stack_pointer</code> and <code>global.set __tls_base</code> instructions in the assembly file.</p>
+<ol>
+<li>Set up the lind-wasm environment for Qianxi on our server.</li>
+</ol>
+<h2 id="mon-7292024">Mon 7/29/2024</h2>
+<ol>
+<li>We now have a clear pipeline for how WASI-libc handles the threading part. The function <code>wasi_thread_start</code> is implemented in assembly format for WebAssembly, and it calls the function <code>__wasi_thread_start_C</code>, which is a C function.</li>
+<li>We are currently working to integrate the <code>.s</code> file with our glibc, and then redirect the function call from WebAssembly to C.</li>
+</ol>
+<h2 id="mon-7262024">Mon 7/26/2024</h2>
+<ol>
+<li>After migrating the WASI-libc threading code, we encountered the following error:</li>
+</ol>
+<pre><code>Error: failed to run main module `thread.wasm`
+
+Caused by:
+    0: failed to instantiate &quot;thread.wasm&quot;
+    1: unknown import: `wasi::thread-spawn` has not been defined
+</code></pre>
+<p>This issue was due to the threading configuration not being enabled at runtime. By adding the <code>--wasi threads=y</code> flag, we then encountered another error:</p>
+<pre><code>Error: unknown import: `wasi_snapshot_preview1::lind_syscall` has not been defined
+</code></pre>
+<p>After examining the source code of Wasmtime, we discovered that since threading support is experimental, the developers have separated <code>thread</code> and <code>preview</code> into two independent modules. Therefore, we need to enable both <code>--wasi threads=y</code> and <code>--wasi preview2=y</code> at runtime.</p>
+<ol>
+<li>After fixing the above issue, we are now encountering the following error:</li>
+</ol>
+<pre><code>2024-07-26T16:52:15.657304Z ERROR wasmtime_wasi_threads: failed to find a wasi-threads entry point function; expected an export with name: wasi_thread_start
+
+thread 'main' panicked at /home/dennis/Documents/lind-wasm/wasmtime/crates/wasi-threads/src/lib.rs:138:21:                                                  
+thread_id = -1 
+</code></pre>
+<h2 id="mon-7252024">Mon 7/25/2024</h2>
+<ol>
+<li>Instead of calling <code>__clone_internal</code>, we are now porting <code>__wasi_thread_spawn</code> from WASI-libc.</li>
+<li>Implemented the __wasi_thread_spawn part in glibc.</li>
+</ol>
+<h2 id="mon-7232024">Mon 7/23/2024</h2>
+<ol>
+<li>Met with Runbin and Qianxi to set up the environment for building glibc. The Zoom meeting was recorded and can be accessed: https://nyu.zoom.us/rec/share/KUC5xHATYHEOQ2N9OUPp9_9HI-5ITyid7ACUmOViLIwAUV5MNTKfqDBLzfpV4RAV.cv_rUMdPO9ahNitB?startTime=1721757718000.</li>
+<li>Inspired by WASI-libc, we temporarily used <code>malloc</code> instead of <code>mmap</code>, which fixed the segmentation error. The allocated size is extracted from WASI-libc.</li>
+</ol>
+<h2 id="mon-7222024">Mon 7/22/2024</h2>
+<ol>
+<li>Fix errors by initializing two values, borrowed from wasi-libc: <code>__default_pthread_attr.internal.stacksize = 131072;</code> and <code>__default_pthread_attr.internal.guardsize = 0;</code> in function __libc_setup_tls in /glibc/csu/libc-tls.c </li>
+<li>In order to create a thread stack, glibc will use mmap to allocate the memory, and mmap is not fully support by our version of glibc, so working on that now</li>
+<li>So, I enabled the debug info in wasi-libc and traced the implementation of mmap. It turns out that mmap in wasi-libc is emulated by malloc. After discussing this with Nick and Coulson, we concluded that this approach is not acceptable, so we will implement our own mmap.</li>
+</ol>
+<h2 id="fri-7192024">Fri 7/19/2024</h2>
+<ol>
+<li>I am now integrating the WASI-libc threading implementation into glibc and have migrated __init_tls.c into the csu directory and updated the Makefile accordingly. After fixing many define and initialization issues, we are now facing these errors:</li>
+</ol>
+<pre><code>__init_tls.c:287:21: error: '__builtin_wasm_tls_align' needs target feature bulk-memory
+        size_t tls_align = __builtin_wasm_tls_align();
+                           ^
+__init_tls.c:288:28: error: '__builtin_wasm_tls_base' needs target feature bulk-memory
+        volatile void* tls_base = __builtin_wasm_tls_base();
+</code></pre>
+<p>It seems like these two functions need to be enabled by the WebAssembly target feature in clang/llvm.</p>
+<ol>
+<li>The functions <code>__builtin_wasm_tls_align</code> and <code>__builtin_wasm_tls_base</code> are WebAssembly-specific built-in functions provided by LLVM to handle thread-local storage (TLS) in WebAssembly. These functions are part of the WebAssembly support in LLVM and Clang. After checking the Makefile of the WASI-libc implementation, I found that adding -mbulk-memory to the CFLAGS enables that feature, which fixed the issue mentioned abov</li>
+</ol>
+<h2 id="thu-7182024">Thu 7/18/2024</h2>
+<ol>
+<li>I am currently integrating the WASI-libc threading implementation into glibc and have migrated <code>__init_tls.c</code> into the <code>csu</code> directory and updated the Makefile accordingly.</li>
+<li>I am working on fixing the compilation issues.</li>
+</ol>
+<h2 id="wed-7172024">Wed 7/17/2024</h2>
+<ol>
+<li>Helped Runbin with Wasmtime and C to WebAssembly compilation.</li>
+<li>Figured out the assertion failure was due to <code>__default_pthread_attr</code> not being initialized, which happened because <code>__libc_start_main</code> was not called.</li>
+<li>Simply calling <code>__libc_start_main</code> is not working because it also initializes the <code>.fini_array</code>, which is a section in ELF binaries, and WebAssembly doesn't support that.</li>
+<li>Now we are trying to understand how WASI-libc handles this, and we will migrate that part of the implementation.</li>
+</ol>
+<h2 id="tue-7162024">Tue 7/16/2024</h2>
+<ol>
+<li>Previously, we encountered the error of not initializing <code>dl_tls_static_size</code> and <code>dl_tls_static_align</code>. After discussing with Professor Cappos and Nick, the solution was to call TLS initialization before the main function (in <code>crt1.c</code>). After checking the source code and testing, I now know that we should call <code>__libc_setup_tls</code>, which will then call <code>init_static_tls</code>. Since <code>__libc_setup_tls</code> is a void function, we don't need to provide any arguments. </li>
+</ol>
+<p>Using GDB to follow the execution path, I confirmed that the previous error has been resolved:</p>
+<pre><code class="language-c">int a = GLRO(dl_tls_static_size);
+int b = GLRO(dl_tls_static_align);
+(gdb) p a
+$1 = 2048
+(gdb) p b
+$2 = 64
+</code></pre>
+<p>Now, we need to move forward to address the error:</p>
+<pre><code>Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x26e04 - &lt;unknown&gt;!__libc_message_impl
+           1: 0xd3af - &lt;unknown&gt;!__libc_assert_fail
+           2: 0x34b9d - &lt;unknown&gt;!allocate_stack
+           3: 0x33cff - &lt;unknown&gt;!__pthread_create_2_1
+           4:  0x599 - &lt;unknown&gt;!__original_main
+           5:  0x4ea - &lt;unknown&gt;!_start
+           6: 0x41d6f - &lt;unknown&gt;!_start.command_export
+       note: using the `WASMTIME_BACKTRACE_DETAILS=1` environment variable may show more debugging information
+    2: memory fault at wasm address 0x8dfb4000 in linear memory of size 0x30000
+    3: wasm trap: out of bounds memory access
+</code></pre>
+<h2 id="mon-7152024">Mon 7/15/2024</h2>
+<ol>
+<li>Helped Runbin with the documentation; most parts have been refined, and he is currently working on the last piece, which is running hello-world using our own glibc.</li>
+<li>I have modified crt1.c, and now we are able to call __libc_setup_tls and then init_static_tls before the main function, but still has errors. </li>
+<li>Now working on debugging the errors of:</li>
+</ol>
+<pre><code>Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x377a1 - &lt;unknown&gt;!_IO_doallocbuf
+           1: 0x3c8bc - &lt;unknown&gt;!_IO_new_file_overflow
+           2: 0x37114 - &lt;unknown&gt;!__overflow
+           3: 0x385fa - &lt;unknown&gt;!_IO_puts
+           4: 0xcc2a - &lt;unknown&gt;!__libc_setup_tls
+           5:  0x4d6 - &lt;unknown&gt;!_start
+           6: 0x3f79d - &lt;unknown&gt;!_start.command_export
+       note: using the `WASMTIME_BACKTRACE_DETAILS=1` environment variable may show more debugging information
+    2: wasm trap: uninitialized element
+</code></pre>
+<h2 id="thu-7112024">Thu 7/11/2024</h2>
+<ol>
+<li>In WASI-libc, <code>crt1.o</code> will call <code>__libc_start_main</code>, which then calls <code>__init_libc</code>, and subsequently calls <code>__init_tls(aux)</code>.</li>
+<li>I have re-implemented the crt1.c, and calling the function <code>__libc_start_main</code> in _start()</li>
+<li>The errors we have for now are:</li>
+</ol>
+<pre><code>wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(libc-start.o): undefined symbol: __fini_array_end
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(libc-start.o): undefined symbol: __fini_array_start
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(libc-start.o): undefined symbol: __fini_array_end
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(libc-start.o): undefined symbol: __fini_array_start
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(libc-start.o): undefined symbol: __fini_array_start
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(libc-start.o): undefined symbol: __fini_array_end
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(libc-start.o): undefined symbol: __fini_array_start
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(libc-start.o): undefined symbol: __fini_array_start
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(libc-start.o): undefined symbol: __preinit_array_end
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(libc-start.o): undefined symbol: __preinit_array_start
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(libc-start.o): undefined symbol: __preinit_array_start
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(libc-start.o): undefined symbol: __preinit_array_start
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(libc-start.o): undefined symbol: __init_array_end
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(libc-start.o): undefined symbol: __init_array_start
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(libc-start.o): undefined symbol: __init_array_start
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(libc-start.o): undefined symbol: __init_array_start
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(dl-support.o): undefined symbol: _dl_sysinfo_int80
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(dl-support.o): undefined symbol: __ehdr_start
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(dl-support.o): undefined symbol: __ehdr_start
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(dl-support.o): undefined symbol: __ehdr_start
+</code></pre>
+<p>Learning from wasi-libc, some of the errors can be solved by initializing both extern void (<em>__fini_array_start []) (void) 0; and
+extern void (</em>__fini_array_end []) (void) 0; into 0 in /glibc/csu/libc-start.c::160</p>
+<h2 id="wed-7102024">Wed 7/10/2024</h2>
+<ol>
+<li>Helped Runbin with the document and merged several of his PRs.</li>
+<li>We are getting an error from <code>__nptl_tls_static_size_for_stack</code> because the variables <code>dl_tls_static_size</code> and <code>dl_tls_static_align</code> are not initialized.</li>
+<li>I have confirmed that <code>init_static_tls</code> is not being called. Nick and Professor Cappos raised a great point that this function should be called before the <code>main</code> function, possibly in the <code>crt1.o</code> file.</li>
+</ol>
+<h2 id="tue-7092024">Tue 7/09/2024</h2>
+<ol>
+<li>In the function allocate_stack in /glibc/nptl/allocatestack.c, the two assertions fail, so we have disabled them for now to continue compiling:</li>
+</ol>
+<pre><code>assert (powerof2 (pagesize_m1 + 1));
+assert (TCB_ALIGNMENT &gt;= STACK_ALIGN);
+</code></pre>
+<ol>
+<li>Next, we are getting error from:</li>
+</ol>
+<pre><code>/* Compute the size of the static TLS area based on data from the
+   dynamic loader.  */
+static inline size_t
+__nptl_tls_static_size_for_stack (void)
+{
+  return roundup (GLRO (dl_tls_static_size), GLRO (dl_tls_static_align));
+}
+</code></pre>
+<p>Thread 1 "wasmtime" received signal SIGFPE, Arithmetic exception.
+3. Since compiling glibc requires optimization, which makes debugging harder, I separately compiled <code>pthread_create.c</code> without optimization. This has made debugging more straightforward.</p>
+<h2 id="mon-7082024">Mon 7/08/2024</h2>
+<ol>
+<li>The issue has been identified. It was caused by int err = allocate_stack(iattr, &amp;pd, &amp;stackaddr, &amp;stacksize);. The allocate_stack function returns a usable stack for a new thread either by allocating a new stack or reusing a cached stack of sufficient size. The ATTR parameter must be non-NULL and point to a valid pthread_attr. The PDP parameter must also be non-NULL.</li>
+<li>The problem with allocatestack.c not being compiled into an object file is due to code from allocatestack.c directly compiled into pthread_create.c. This is an unconventional method, but it seems like people use it anyway. It makes debugging harder, but I can debug it by adding print statements."</li>
+</ol>
+<h2 id="thu-7042024">Thu 7/04/2024</h2>
+<ol>
+<li>Confirmed that pthread_create calls __pthread_create_2_1 in glibc.</li>
+<li>Clean up the GitHub repo: the default branch is now main, and we created a separate branch wasm-libc-thread to work on thread-related tasks.</li>
+</ol>
+<h2 id="wed-7032024">Wed 7/03/2024</h2>
+<ol>
+<li>Create and run simple vtable testcase</li>
+<li>Now printf (hello-world example) is fully functional. The problem with the vtables was due to the developers explicitly placing all libio vtables into the relro section in ELF. The solution is simple: we removed <code>attribute_relro</code> from /glibc/libio/vtables.c:92.</li>
+</ol>
+<h2 id="tue-7022024">Tue 7/02/2024</h2>
+<ol>
+<li>The previous printf infinite loop error has been fixed by re-implementing BYTE_COPY_FWD and BYTE_COPY_BWD in c (/glibc/sysdeps/i386/memcopy.h)</li>
+<li>Refined the implementation of memcpy; it now works properly.</li>
+<li>The printf finally works, but still need to take care of the vtable. Now we use #define _IO_XSPUTN(FP, DATA, N) _IO_file_xsputn(FP, DATA, N) to directly call _IO_file_xsputn, skipping the vtable.</li>
+</ol>
+<h2 id="mon-7012024">Mon 7/01/2024</h2>
+<ol>
+<li>wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(pthread_create.o): undefined symbol: __futex_abstimed_wait_cancelable64
+This error is fixed by disabling INTERNAL_SYSCALL_CANCEL for futex_time64 in /glibc/nptl/futex-internal.c</li>
+<li>wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(pthread_rwlock_rdlock.o): undefined symbol: __futex_abstimed_wait64
+This error is fixed by disabling INTERNAL_SYSCALL_CANCEL for futex (__futex_abstimed_wait_common32) in /glibc/nptl/futex-internal.c</li>
+<li>wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(fileops.o): undefined symbol: __open 
+This error is fixed by changing the implementation of __libc_open to return MAKE_SYSCALL(10, "syscall|open", (uint64_t) file, (uint64_t) oflag, (uint64_t) mode, NOTUSED, NOTUSED, NOTUSED); in /glibc/sysdeps/unix/sysv/linux/open.c</li>
+<li>wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(pthread_mutex_unlock.o): undefined symbol: __lll_unlock_elision
+This error is fixed by disabling _xend() ''hardware unlock'' in /glibc/sysdeps/unix/sysv/linux/x86/elision-unlock.c</li>
+<li>wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(pthread_mutex_lock.o): undefined symbol: __lll_lock_elision
+This error is fixed by disabling xbegin() /glibc/sysdeps/unix/sysv/linux/x86/elision-lock.c</li>
+<li>Now, both pthread and hello-world can be compiled successfully </li>
+</ol>
+<h2 id="fri-6282024">Fri 6/28/2024</h2>
+<ol>
+<li>wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(dl-reloc.o): undefined symbol: _dl_lookup_symbol_x 
+Fix above error by changing int gscope_flag; to _Atomic int gscope_flag; in /glibc/sysdeps/i386/nptl/tls.h</li>
+<li>wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(ldbl2mpn.o): undefined symbol: __clz_tab
+Fix above error by adding implementation of unsigned char __clz_tab[] in /glibc/sysdeps/i386/mp_clz_tab.c</li>
+<li>wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(stat64.o): undefined symbol: __fstatat64_time64
+This error is fixed by disabling fstatat64_time64_stat in /glibc/sysdeps/unix/sysv/linux/fstatat64.c for now</li>
+</ol>
+<h2 id="thu-6272024">Thu 6/27/2024</h2>
+<ol>
+<li>Change the implementation of thread_self to wasi-libc version, which fixed errors:
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(pthread_join_common.o): undefined symbol: __wasilibc_pthread_self
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(pthread_join_common.o): undefined symbol: __wasilibc_pthread_self
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(pthread_join_common.o): undefined symbol: __wasilibc_pthread_self
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(pthread_join_common.o): undefined symbol: __wasilibc_pthread_self
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(pthread_join_common.o): undefined symbol: __wasilibc_pthread_self
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(pthread_join_common.o): undefined symbol: __wasilibc_pthread_self
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(pthread_join_common.o): undefined symbol: __wasilibc_pthread_self</li>
+<li>wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(gconv_dl.o): undefined symbol: __libc_dlopen_mode
+Fixed above error by disabling the // args.caller_dlopen = RETURN_ADDRESS (0);</li>
+<li>wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(dl-debug.o): undefined symbol: _r_debug_extended
+This error is fixed by converting dl-debug-symbols.S to dl-debug-symbols.c</li>
+<li>wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(rtld_static_init.o): undefined symbol: __dlopen
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(rtld_static_init.o): undefined symbol: __dlsym
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(rtld_static_init.o): undefined symbol: __dlvsym
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(rtld_static_init.o): undefined symbol: __dlmopen
+Above error are fixed by #define RETURN_ADDRESS(nr) (NULL) in /glibc/include/libc-symbols.h</li>
+</ol>
+<h2 id="wed-6262024">Wed 6/26/2024</h2>
+<ol>
+<li>The build and run pipeline has been tested and works well</li>
+<li>To compile threading testcase, we are facing below errors:
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(gconv_dl.o): undefined symbol: __libc_dlopen_mode
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(gconv_dl.o): undefined symbol: __libc_dlsym
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(gconv_dl.o): undefined symbol: __libc_dlsym
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(gconv_dl.o): undefined symbol: __libc_dlsym
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(gconv_dl.o): undefined symbol: __libc_dlclose
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(ldbl2mpn.o): undefined symbol: __clz_tab
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(ldbl2mpn.o): undefined symbol: __clz_tab
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(ldbl2mpn.o): undefined symbol: __clz_tab
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(ldbl2mpn.o): undefined symbol: __clz_tab
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(ldbl2mpn.o): undefined symbol: __clz_tab
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(ldbl2mpn.o): undefined symbol: __clz_tab
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(ldbl2mpn.o): undefined symbol: __clz_tab
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(ldbl2mpn.o): undefined symbol: __clz_tab
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(ldbl2mpn.o): undefined symbol: __clz_tab
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(ldbl2mpn.o): undefined symbol: __clz_tab
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(ldbl2mpn.o): undefined symbol: __clz_tab
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(ldbl2mpn.o): undefined symbol: __clz_tab
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(ldbl2mpn.o): undefined symbol: __clz_tab
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(pthread_mutex_unlock.o): undefined symbol: __lll_unlock_elision
+wasm-ld: error: ../../glibc/sysroot/lib/wasm32-wasi/libc.a(pthread_create.o): undefined symbol: __libc_sigaction</li>
+<li>Add implementation to handle sigaction syscall in both rustposix and glibc</li>
+</ol>
+<h2 id="tue-6252024">Tue 6/25/2024</h2>
+<ol>
+<li>Give Runbin access to server, and let him play around</li>
+<li>Add document to compile wasmtime from source code</li>
+<li>Try to run the whole pipeline, and fix some documentation </li>
+<li>Continue working on threading part, now trying to compile pthread_create.c and remove the asm code</li>
+<li>Now we have pthread_create.o generated</li>
+</ol>
+<h2 id="mon-6242024">Mon 6/24/2024</h2>
+<p><strong>Summary</strong>: Migrated <code>glibc</code> <code>wasmtime</code> <code>lind-wasm-docs</code> <code>lind-wasm-tests</code> from <code>yizhuoliang</code> to <code>Lind-project</code> org, note that wasm adapted rustposix is still on <code>yzhang71</code>'s fork, the <code>3i-dev</code> branch.</p>
+<p>Downside of git submodules is keep tracking of branches seperately. Currently, the latest branches are:</p>
+<ul>
+<li><code>glibc</code> is on <code>syscall-retrun</code>, yes, ret"run", a typo</li>
+<li><code>wasmtime</code> is on <code>add-lind</code></li>
+<li>tests, and docs are using <code>main</code></li>
+</ul>
+<h2 id="wed-6192024">Wed 6/19/2024</h2>
+<p><strong>Summary</strong>: So today we implemented <code>brk</code>/<code>sbrk</code> in glibc (userspace), by over allocating to page-aligned address and exposing a “psudo-break” to the caller. Now malloc is fully functional for small chunks that uses sbrk!</p>
+<p>When larger chunks are requested, the mmap path of malloc is triggerred. <code>mmap</code> is not yet handled.</p>
+<p>A side note is that, later we should bring <code>brk</code>/<code>sbrk</code> to the runtime space as syscalls, and add a mutex to the “psudo-break”, otherwise race conditions are still possible under current implementation.</p>
+<h2 id="mon-tue-617-182024">Mon-Tue 6/17-18/2024</h2>
+<p>Looking at how are LinearMemory instances provisioned by the runtime, will include these in a seperate document.</p>
+<p><img alt="Linear Memory Provisioning in Wasmtime" src="../images/provisionLinearMem.png" /></p>
+<p>In Wasmtime, the WASM module’s linear memory is implemented by <code>MmapMemory</code> struct, which is a simple struct contains a <code>mmap</code> struct and a mutable <code>length</code>. The compiler (i.e. interpreter) do bounds checking according to the <code>length</code> field, <strong>so any address above <code>length</code> would be invalid</strong>. The <code>mmap</code> struct is implemented differently for different host OS. For linux, it’s just the mmap provided by rustix  library. Note that they almost never use a “file” for mmap, here mmap is just used to allocate memory.</p>
+<h2 id="fri-6142024">Fri 6/14/2024</h2>
+<p><strong>Summary</strong>: Transitioned from Wasmer to Wasmtime, and added userspace debugging document. Also fixed the syscall return value at the interface between glibc and runtime.</p>
+<p><strong>What's next</strong>: Find someway to implement <code>brk</code>/<code>sbrk</code> in the runtime as host functions.</p>
+<p>About host functions:
+Currently the <code>lind_syscall</code> host function is integrated within the <code>wasi_snapshot_preview1</code> interface, along with the <code>fd_write</code> stuff. I added this to preview1 for simplicity, where only the <code>from_witx!</code> and the witx file need to be changed. In the longer term we want to seperate lind_syscall with other wasi host functions of course.</p>
+<p>About function return of host functions:
+In wasi-libc and Wasmtime (also Wasmer), the host functions doesn't return the values to the userspace caller directly. 
+The last argument in the import signature (e.g. <code>__imported_wasi_snapshot_preview1_fd_write</code> in <code>wasi-libc</code>) is actually a pointer to the return value. When I implemented <code>lind_syscall</code> host function, the last argument in the import signature is also an <code>unsigned int</code>, where in the userspace I firstly decalre <code>int ret = 0</code>, then pass <code>&amp;(unsigned int) ret</code> as the last argument. And copying the value returned by the actual <code>lind_syscall</code> in Wasmtime to the <code>ret</code> happens implicitly.</p>
+<h2 id="wed-6122024">Wed 6/12/2024</h2>
+<p><strong>Summary</strong>: Consecutive syscalls okay in Wasmer (lind init in <code>run_wasm</code>). Added complete syscall support for malloc, except <code>brk</code>/<code>sbrk</code>.</p>
+<p><strong>Issues</strong>: 1) <strong>malloc fails after several mmap/munmap calls, hard to debug</strong> 2) the <code>brk</code> syscall needs special handling, where <code>wasi-libc</code> is implemented with the compiler emitted function <code>__builtin_wasm_memory_grow</code>. Note that currently lind's <code>brk</code> is managed by NaCl.</p>
+<p><strong>What's next</strong>: We <em><strong>MUST</strong></em> find a way to trace/debug the wasm runtime's user space. We are currently exploring both Wasmer and Wasmtime's potential to do this. The <code>brk</code> need more investigation.</p>
+<p>Wasmer has a "DWARF debugging repo here https://github.com/wasmerio/wasm-debug. [Well okay, this is way too obsolete]</p>
+<p>Wasmtime's doc on debugging https://github.com/bytecodealliance/wasmtime/blob/main/docs/examples-debugging-native-debugger.md</p>
+<p>trying to understand both</p>
+<h2 id="tue-6112024">Tue 6/11/2024</h2>
+<p><strong>Summary</strong>: <code>malloc-hello</code> compiles successfully, Wasmer also validate the module successfully.</p>
+<p><strong>What's next</strong>: the program fails after the first syscall to lind, as the initial modifications to Wasmer doesn't support consecutive syscalls. I'll update Wasmer to support consecutive syscalls, and Dennis will adapt more syscalls in glibc / rustposix.</p>
+<p>Adapted <code>writev</code> and <code>munmap</code> in glibc to use lind syscalls. Add rustposix new dispatcher support for these 2 calls.</p>
+<p>When we removed assembly implementations earlier, we added dummy replacement functions with argument types of <code>uint64_t</code>, which was absolutely wrong. We should just use standard posix arguments here, and the type conversion to <code>i64</code> is done by our <code>MAKE_SYSCALL</code> macro.</p>
+<p>Added the WASM program compilation doc.</p>
+<h3 id="starting-this-doc-today">Starting this Doc Today!</h3>
+<p>--- <strong>BELOW WILL BE JUST SLACK MESSAGE HISTORIES</strong> :) ---</p>
+<h2 id="mon-6102024">Mon 6/10/2024</h2>
+<p>Coulson:</p>
+<p>As a first step to resolve the glibc’s internal use of TLS <code>initial-exec</code> model, I just made two changes
+- I replaced the TLS variable attributes and root-level makefile to use <code>local-exec</code>, which is supported by WASM compiler
+- In glibc/locale directory, many files use the national locale <code>NL_CURRENT_DEFINE</code> macro, which contains some assembly doing value assignment and variable visibility setting. The use of assembly here is completely unnecessary, so I replaced the macro definition with plain C, with the same effect. See this <a href="https://github.com/yizhuoliang/glibc/commit/2ad9c05ef79e00ffcdc44df7a837b7e42cfc45c1">commit</a></p>
+<p>After these changes, the <code>_nl_current_LC_CTYPE_used</code> issue I posted in this channel on June 2nd, is resolved.</p>
+<h2 id="fri-sat-67-82024">Fri-Sat 6/7-8/2024</h2>
+<p>Coulson:</p>
+<p>So I carefully reviewed <code>native_client</code>’s TLS related code, and compared normal glibc’s i386 tls.h file with <code>nacl-glibc</code>’s i386.h file (note that both nacl and ours are actually using i386 in glibc). Here’s the conclusion:
+NaCl doesn’t manage TLS variables at all, both <code>NaClSysTlsInit</code> and <code>NaClSysTlsGet</code> are actually used to get the pointer to the TLS_base. Like I reported yesterday, x86 uses the <code>gs</code>/<code>fs</code> register to store the pointer to the TLS_base. Because NaCl is cross platform, and this <code>gs</code> register doesn’t exist on some arch, NaCl just use these two syscalls to mimic this register.</p>
+<h2 id="thu-662024">Thu 6/6/2024</h2>
+<p>Added the TLS doc.</p>
+<p>Coulson:</p>
+<p>So I wrote a note. Now I know how the compiler and linker handles TLS even without threading, they expose 2 constants, 1 mut var, and 1 function to the threading library. Also understood how is <code>wasi-libc</code> pthread library built on-top-of these. Although I wrote this doc with wasm environment as examples, the general mechanisms are the same for normal linux.</p>
+<h2 id="wed-652024">Wed 6/5/2024</h2>
+<p><img alt="TLS vs. TSD" src="../images/TLSvsTSD.png" />
+Coulson:</p>
+<p>An super important distinction between TLS and the threading library’s TSD need our attention</p>
+<ul>
+<li>TLS: provided by the compiler and linker, exists even without pthread library at all.</li>
+<li>TSD: (thread specific data): this is the interface provisioned by the pthread  library, which is implemented by nptl  (also wasi-libc  threading built). This includes the getspecific()  and setspecific()  functions. In both glibc ’s nptl  and the wasi-libc  case, these are build on-top-of TLS</li>
+</ul>
+<h2 id="sat-612024">Sat, 6/1/2024</h2>
+<p>First time seeing the series of errors related to <code>initial-exec</code> absolute addressing</p>
+<pre><code>wasm-ld: error: /glibc/sysroot/lib/wasm32-wasi/libc.a(wcsmbsload.o): undefined symbol: _nl_current_LC_CTYPE
+</code></pre>
+<h2 id="wed-5292024">Wed, 5/29/2024</h2>
+<p>Coulson:</p>
+<p>A sidenote here, when we use clang  with WebAssembly target, if we are building a library, we need the -c  flag. Without -c , we are building an executable whose functions will not be shared.</p>
+<p>Also some exiting updates here</p>
+<ul>
+<li>Now using our wasm glibc’s sysroot to compile a simple hello world, the secondary compilation in Wasmer is also passed! The only thing left is to refine the
+Wasmer’s host function interface connecting to rustposix, which is easy.</li>
+<li>I implemented the WASM syscall interface inside glibc, as a separate directory at /glibc/lind_syscall</li>
+<li>I implemented a shell script that can generate a WASM sysroot from the glibc’s building directory by one command</li>
+</ul>
+<p>Dennis:</p>
+<p>Some updates from my side, I have implemented write, read, close, access and open syscalls to be used for "hello world" example from Coulson side.</p>
+<p>Coulson:</p>
+<p>We can run a write-syscall-only hello world succesfully, from our WASM glibc, to the generic lind syscall interface added in Wasmer, to the new 3i-style layer newly implemented by Dennis in rustposix!</p>
+<h2 id="mon-tue-627-282024">Mon-Tue, 6/27-28/2024</h2>
+<p>Sepnt some time on debugging the</p>
+<pre><code>error: Unable to compile &quot;newhello.wasm&quot;
+╰─▶ 1: Validation error: type mismatch: values remaining on stack at end of block (at offset 0x26a)
+</code></pre>
+<p>The way to solve similar issues was added to the WASM compile doc.</p>
+<h2 id="fri-5242024">Fri, 5/24/2024</h2>
+<p>Start to add</p>
+<ul>
+<li>wasmer should pass linear mem start addr to rustposix</li>
+<li>rustposix should have the 3i style layer that do the address translation</li>
+</ul>
+<h2 id="thu-5232024">Thu, 5/23/2024</h2>
+<p>Coulson:</p>
+<p>Now we further cleared the errors, now it’s 1827 errors, and Zero Segfaults.</p>
+<p>The <code>SINGLE_THREAD_P</code> issue were due to mismatch of .c and other stuff, because we deleted the asm, the malloc fall down to the generic implementation, while the header file actually included is still the sysdep one. After deleting the sysdep header to force using generic header file, many errors were resolved</p>
+<p>As a result, now we also have the full malloc library!</p>
+<h2 id="wed-5222024">Wed, 5/22/2024</h2>
+<p>Coulson:</p>
+<p>(Disable PLT bypassing) Well now we are constantly shrinking the set of errors and gets more .o files. This morning we have 65000 errors, but now it’s 4500.</p>
+<h2 id="mon-5202024">Mon, 5/20/2024</h2>
+<p>Coulson:</p>
+<p>So, now the entire string library is complete, after further clean-up asm stuff. And the 4000 seg faults, now only 139 remains.</p>
+<p><strong>Note that we are now cleaning the asm not in the sysdeps directories!</strong></p>
+<p>But note that there are still countless compilation errors out there. This also makes sense because if we compare this wasm32 built with a normal complete built, we can see that any fancy stuff (like single-instruction-multiple-data) just failed (or disabled) during the process as expected, but this doesn’t bother we get the rest done. So these are okay errors</p>
+<h2 id="fri-sun-517-192024">Fri-Sun, 5/17-19/2024</h2>
+<p>So dennis today fixed a handful clang segfault occurrences by trial-and-error on various includes, in a case-by-case manner. For example, <code>csu/check_fds.c</code> gets <code>#include &lt;not-cancel.h&gt;</code> removed, then it compiles</p>
+<p>and <code>csu/init_first.c</code> gets sysdep.h libc-internal.h ldsodefs.h  removed, then it compiles
+But I saw that there are still 3903 such seg fault, throughout the compilation process, not just the csu part, so handling each of them one by one is not plausible, and I was doing some DFS on this issue, hoping we can get to know, what specifically is causing the clang segfault.</p>
+<p>I spent a few hours trying to track down the issue, and I doubt it’s still because some assembly code out there. Here’s the reason. Initially, compiling csu/check_fds.c  would cause the segfault, where <code>csu/check_fds.c</code> includes <code>sysdeps/unix/sysv/linux/not-cancel.h</code> which includes the sysdep.h implemented at sysdeps/unix/i386/sysdep.h , which contains bunch of assembly macros, and further includes other sysdep.h files contains assembly macros.</p>
+<p>Then, if we clear this sysdeps/unix/i386/sysdep.h , the segfault for csu/check_fds.c goes away.</p>
+<p>The problem is that, for the next file <code>csu/init_first.c</code> causing segfault, removing the sysdep.h includes is needed but not enough. We definitely need to explore this more, there’s still a lot of confusions. These are the hints we have so far.</p>
+<p>Ah Ha!</p>
+<p>Okay, I know what’s the clang bug here. There are some occurrences of using inline asm to do symbol aliasing, like, <code>__asm__ ("mempcpy = __GI_mempcpy");</code></p>
+<p>when the clang compiler set with wasm target sees this, it won’t raise any error but simply get a segmentation fault</p>
+<p>If I put this one line into a c file, then trying to compile it simply trigger exactly the same seg fault we see through out the compilation process </p>
+<p>Then people will ask, why I and Dennis missed these inline asm? :joy: (edited) </p>
+<p>Because they are not in the sysdeps directly, but in the glibc/include directory. Because stuff like symbol aliasing are not arch specific though it is indeed assembly, and when I firstly started the sanitization I supposed all assembly are arch specific. I only realized this after hours and hours of inspection.</p>
+<p>Now we will sanitize the glibc/include, then I think we can have a leap on the compilation.</p>
+<h2 id="tue-5142024">Tue, 5/14/2024</h2>
+<p>Dennis:</p>
+<p>At this stage, we have removed the in-line asm in glibc as well. But when compiling with wasm32, we encountered error: clang frontend command failed with exit code 139 (use -v to see invocation and it seems like we triggered a bug in llvm.</p>
+<p>Coulson:</p>
+<p>Start using <code>--keep-going</code> to skip the seg faults. Also tested that the individual wasm object files are indeed usable.</p>
+<h2 id="tue-4302024">Tue, 4/30/2024</h2>
+<p>Justin:</p>
+<p>I've thought some more and think the macro call in glibc should look like this (I don't care what you name the macro):
+<code>MAKE_SYSCALL(syscallnum,"syscall|callname", arg1, arg2, arg3, arg4, arg5, arg6)</code></p>
+<p>with write looking like:
+<code>MAKE_SYSCALL(2,"syscall|write", (uint64)fd, (uint64)buf, (uint64)len, NOTUSED, NOTUSED, NOTUSED)</code>
+NOTUSED should be defined to be a magic value that will be obviously not a normal value (avoiding NULL, 0, 1, etc.) if it shows up in a debugger / output, it is not confused for a user passed value.  Something like 0xdeadbeefdeadbeef.
+My rationale for having this slightly more complex macro is that later on if we decide we want to switch to keying them based upon strings instead of numbers, this will be much easier.  It also isn't any different from an efficiency standpoint, since the preprocessor will just strip out the string if we don't use it.</p>
+<h2 id="thu-4252024">Thu, 4/25/2024</h2>
+<p>Coulson:</p>
+<p>The fundamental way that wasi-libc  implements a syscall and declare that symbol for compiler/runtime is clear to me now, basically the the <code>__import_module__</code> and <code>__import_name__</code> are the magical symbols that has NO DEFINITION. So these should be the <code>wasi-libc</code>’s secrete signals to tell the WASM compiler and runtime what external symbol it needs.</p>
+<p><img alt="WASI importing syscall" src="../images/wasiSyscall.png" /></p>
+<p>Dennis:</p>
+<p>Note that the import namespace and function name should be align with the how the runtime exports them. e.g. how Wasmer exports <code>wasi_smapshot_preview1</code></p>
+<h2 id="the-wild-age">The Wild Age</h2>
+<p>This project started in March, 2024.</p>
+<p>Earlier history won't be helpful, these days we were doing the intial experiments on the WASM runtime and libcs.</p>
+<p>We also don't have a very orgnized record of our removal of assembly code in glibc, unfortunately.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>
