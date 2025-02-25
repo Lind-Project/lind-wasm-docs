@@ -10,7 +10,7 @@ Wasmtime traditionally manages memory using WebAssembly’s linear memory model,
 
 Attempts to provide POSIX-like interfaces for WASM, such as wasi-libc and emscripten, rely on WASM's memory.grow feature to expand available memory. Both implement custom malloc() functions that use memory.grow to extend the heap while preventing system mmap operations. Alternatively, they simulate file-backed mmap by invoking memory.grow and manually copying file contents into the allocated region.
 
-To address this, we eschew memory.grow and integrat a vmmap system into Lind that more closely resembles POSIX-based memory management. This allows proper implementation of syscalls like brk(), mmap(), and mprotect() for memory allocation, deallocation, and permission management. It also ensures accurate memory region copying when forking cages.
+To address this, we eschew memory.grow and integrate a vmmap system into Lind that more closely resembles POSIX-based memory management. This allows proper implementation of syscalls like brk(), mmap(), and mprotect() for memory allocation, deallocation, and permission management. It also ensures accurate memory region copying when forking cages. Further justification for the need for a vmmap is provided in the later section "Why the Vmmap is Necessary."
 
 ## Vmmap Implementation Overview
 
@@ -79,7 +79,7 @@ Without a vmmap, syscalls like mmap() and munmap() could still be implemented us
 
 #### fork()
 
-The fork() system call requires duplicating the parent process’s memory space for the child. Properly replicating memory requires tracking protections and distinguishing shared memory regions. Some regions may have different permissions based on their initial mappings or modifications via mprotect(), preventing a simple bulk copy. Additionally, shared regions must be handled separately to maintain correct page sharing between cages. Without vmmap, accurate memory duplication in the child process wouldn’t be guaranteed. Instead by tracking which regions are shared, we can use [mremap](https://man7.org/linux/man-pages/man2/mremap.2.html) to create a shareable mapping between cages.
+The fork() system call requires duplicating the parent process’s memory space for the child. Properly replicating memory requires tracking protections and distinguishing shared memory regions. Memory regions possess distinct permissions—either defined at creation or modified through mprotect(). Consequently, a simple bulk memory copy cannot accurately preserve these protections without tracking each region individually. Additionally, memory regions mapped with MAP_SHARED must be tracked individually to ensure proper sharing between cages. Without a mechanism like a vmmap, there is no way to distinguish shared regions from non-shared ones. By tracking shared regions, we can then use [mremap](https://man7.org/linux/man-pages/man2/mremap.2.html) when forking to create a shareable mapping between cages.
 
 #### brk()
 
