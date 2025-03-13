@@ -22,10 +22,10 @@ Then under lind, where it should produce the same output:
 ./lindtool.sh cptest hello
 ./lindtool.sh run hello
 ```
-A sample output is shown below:
+<!-- A sample output is shown below:
 <a href="../../images/hello_screenshot1.png" target="_blank">
   ![Hello World Screenshot](../images/hello_screenshot1.png)
-</a>
+</a> -->
 
 ## Example with Header file included
 
@@ -68,7 +68,7 @@ Then under lind, where it should produce the same output:
 ./lindtool.sh cptest helloworld
 ./lindtool.sh run helloworld
 ```
-A sample output is shown below:
+<!-- A sample output is shown below:
 <a href="../../images/hello_screenshot2.png" target="_blank">
   ![Hello World With Headers Screenshot](../images/hello_screenshot2.png)
-</a>
+</a> -->
