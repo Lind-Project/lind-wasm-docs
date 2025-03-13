@@ -9,6 +9,7 @@ nav:
     - Compiling programs: use/compile-programs.md
     - Running programs: use/run-programs.md
     - Debugging programs: use/debug-programs.md
+    - Examples: use/examples.md
   - Internal Documentation:
     - libc: internal/libc.md
     - Wasmtime: internal/wasmtime.md
