@@ -7,7 +7,7 @@ This document outlines the project guidelines for submitting pull requests (PRs)
 - **All commits must be signed:** [GitHub GPG Key Guide](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key)
 
 ## Code Formatting
-- Code must adhere to our style guidelines _(Link WIP)_.
+- Code must adhere to our style guidelines [Style Guide](https://lind-project.github.io/lind-wasm-docs/more/styleguide/)
 - Code must pass **Clippy**: [Clippy](https://doc.rust-lang.org/clippy/)
 - Code must be formatted using **cargo-fmt**: [Cargo Fmt](https://doc.rust-lang.org/cargo/commands/cargo-fmt.html)
 
