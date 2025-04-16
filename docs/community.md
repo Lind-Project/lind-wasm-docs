@@ -3,7 +3,8 @@
 Join [#lind](https://secure-systems-lab.slack.com/archives/CBKAGSC9Z) on the
 [NYU Secure Systems Lab Slack](https://secure-systems-lab.slack.com/) to receive
 updates about the project and upcoming events, or dial in on a community
-meeting!
+meeting! Details are listed below and on
+[Google Calendar](https://calendar.google.com/calendar/u/1?cid=Y18zMDViOTU2M2U2NjEwOTllYjUwMWIzNjA0MmYyMjBjNGNjMjIyNmRiZTBiMmE4NzMxYjdmMWM0Nzk4ODMxMWRkQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20).
 
 ## Meetings
 
