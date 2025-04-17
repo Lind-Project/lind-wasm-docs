@@ -5,11 +5,6 @@ theme:
 
 nav:
   - Home: index.md
-  - Using Lind-Wasm:
-    - Compiling programs: use/compile-programs.md
-    - Running programs: use/run-programs.md
-    - Debugging programs: use/debug-programs.md
-    - Examples: use/examples.md
   - Internal Documentation:
     - libc: internal/libc.md
     - Wasmtime: internal/wasmtime.md
@@ -24,6 +19,7 @@ nav:
     - Compile Programs: use/compile-programs.md
     - Debug Programs: use/debug-programs.md
     - Run Programs: use/run-programs.md
+    - Examples: use/examples.md
   - Contributing:
     - contribute/README.md
     - Rust style guide: contribute/styleguide.md
