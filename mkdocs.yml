@@ -24,13 +24,15 @@ nav:
     - Compile Programs: use/compile-programs.md
     - Debug Programs: use/debug-programs.md
     - Run Programs: use/run-programs.md
-  - Testing:
-    - Unit tests: testing/unit-tests.md
+  - Contributing:
+    - contribute/README.md
+    - Rust style guide: contribute/styleguide.md
+    - Unit tests: contribute/unit-tests.md
+    - Adding to the docs: contribute/writeDoc.md
   - More:
     - Maintainers: more/maintainers.md
-    - Adding to the docs: more/writeDoc.md
-    - Style Guide: more/styleguide.md
   - Community: community.md
+
 
   # - Progress: daily.md
   # - WASM Knowledge:
