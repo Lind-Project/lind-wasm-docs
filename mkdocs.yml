@@ -30,10 +30,9 @@ nav:
     - Unit tests: contribute/unit-tests.md
     - Adding to the docs: contribute/writeDoc.md
     - Security policy: contribute/security.md
-  - More:
-    - Maintainers: more/maintainers.md
-  - Community: community.md
-
+  - Community:
+    - community/README.md
+    - Team: community/team.md
 
   # - Progress: daily.md
   # - WASM Knowledge:
