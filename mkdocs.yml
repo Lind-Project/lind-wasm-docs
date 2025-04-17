@@ -29,6 +29,7 @@ nav:
     - Rust style guide: contribute/styleguide.md
     - Unit tests: contribute/unit-tests.md
     - Adding to the docs: contribute/writeDoc.md
+    - Security policy: contribute/security.md
   - More:
     - Maintainers: more/maintainers.md
   - Community: community.md
