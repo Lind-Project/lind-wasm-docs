@@ -15,3 +15,4 @@ Detailed guidelines about writing code, tests, documentation, and more are below
 * [Unit Tests](unit-tests.md)
 * [Adding to the docs](writeDoc.md)
 * [Security Policy](security.md)
+* [Code of Conduct](../community/conduct.md)
