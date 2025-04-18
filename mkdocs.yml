@@ -26,10 +26,10 @@ nav:
     - Unit tests: contribute/unit-tests.md
     - Adding to the docs: contribute/writeDoc.md
     - Security policy: contribute/security.md
-    - Code of conduct: contribute/conduct.md
   - Community:
     - community/README.md
     - Team: community/team.md
+    - Code of conduct: community/conduct.md
 
 extra_css:
   - stylesheets/img.css
