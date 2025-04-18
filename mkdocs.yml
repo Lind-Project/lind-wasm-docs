@@ -30,16 +30,5 @@ nav:
     - community/README.md
     - Team: community/team.md
 
-  # - Progress: daily.md
-  # - WASM Knowledge:
-  #   - understandTls.md
-  # - Building WASM glibc: buildGlibcWASM.md
-  # - Compile safeposix-rust: compile-safeposix-rust.md
-  # - Compiling Wasmtime from Source: compile-wasmtime.md
-  # - Compiling C to WASM: wasmCompile.md
-  # - Debugging WASM module with Wasmtime: wasmtime-debug.md
-  # - How to add docs: writeDoc.md
-  # - Team: team.md
-
 extra_css:
   - stylesheets/img.css
