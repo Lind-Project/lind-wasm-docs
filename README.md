@@ -1,6 +1,5 @@
 # Lind Project website
 
-The Lind Project website is built with [`mkdocs`](https://www.mkdocs.org/) and hosted on *GitHub pages*: [lind-project.github.io/lind-wasm-docs](https://lind-project.github.io/lind-wasm-docs/).
-
-## Contributing
-See ["How to Add Documentation"](https://lind-project.github.io/lind-wasm-docs/contribute/writeDoc/) for instructions.
+> [!WARNING]
+> The website assets have moved to [`lind-wasm/docs`](https://github.com/Lind-Project/lind-wasm/tree/main/docs)
+> and are hosted on [lind-project.github.io/lind-wasm/](https://lind-project.github.io/lind-wasm/).
